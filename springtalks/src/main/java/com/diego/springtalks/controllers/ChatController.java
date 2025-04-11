@@ -40,7 +40,7 @@ public class ChatController {
                 .orElseThrow(() -> new RuntimeException("ChatRoom not found!"));
 
 
-        if (!chatRoom.getParticipants().contains(sender)) {
+        if (!chatRoom.getParticipants().isEmpty() && !chatRoom.getParticipants().contains(sender)) {
             throw new RuntimeException("User is not allowed in the room");
         }
 
